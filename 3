@@ -1,0 +1,27 @@
+clear; clc;
+
+applicants = [
+    165 72 1;
+    172 85 0;
+    168 91 1;
+    181 77 1;
+    174 69 0;
+    169 88 1
+];
+
+c1 = applicants(:,1) >= 170;
+
+c2 = applicants(:,2) >= 80;
+
+c3 = applicants(:,3) == 1;
+
+finalc = c1 & c2 & c3;
+
+idx = find(finalc);
+
+result = applicants(idx, :);
+
+info = [idx, result];
+
+disp('최종 합격자 정보:');
+disp(info);
