@@ -1,0 +1,22 @@
+clear; clc;
+
+name = input('이름 입력: ', 's');
+
+scores = input('국어 영어 수학 점수 입력 (예: [88 92 79]): ');
+
+avg = sum(scores) / length(scores);
+
+disp('----- 결과 -----');
+fprintf('이름: %s\n', name);
+fprintf('점수: %d %d %d\n', scores(1), scores(2), scores(3));
+fprintf('평균: %.2f\n', avg);
+
+if avg >= 90
+    disp('Excellent');
+elseif avg >= 80
+    disp('Good');
+elseif avg >= 70
+    disp('Fair');
+else
+    disp('Needs Improvement');
+end
