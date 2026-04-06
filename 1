@@ -1,0 +1,27 @@
+clear; clc;
+
+x = [-2 -1 0 1 2];
+
+sq = squareVec(x);
+m = meanVec(x);
+mt = mixedTransform(x);
+
+disp(sq)
+disp(m)
+disp(mt)
+
+function y = squareVec(x)
+    y = x.^2;
+end
+
+function m = meanVec(x)
+    m = sum(x) / length(x);
+end
+
+function y = mixedTransform(x)
+    y = zeros(size(x));
+    
+    y(x < 0) = -x(x < 0);      
+    y(x == 0) = 0;               
+    y(x > 0) = 2*x(x > 0) + 1;   
+end
